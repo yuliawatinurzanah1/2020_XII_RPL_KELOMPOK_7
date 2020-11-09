@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Tabungan Walikelas</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -71,14 +71,10 @@
         @if (Route::has('login'))
         <div class="top-right links">
             @auth
-            @if(Auth()->user()->hasRole('teacher'))
-            <a href="{{ route('dashboard.users') }}">Home</a>
-            @elseif(Auth()->user()->hasRole('staff'))
-            <a href="{{ route('dashboard.users') }}">Home</a>
-            @elseif(Auth()->user()->hasRole('student'))
+            @if(Auth()->user()->hasRole('student'))
             <a href="{{ route('dashboard.users') }}">Home</a>
             @elseif(Auth()->user()->hasRole('admin'))
-            <a href="{{ route('dashboard.admin') }}">Home</a>
+            <a href="{{ route('dashboard.users') }}">Home</a>
             @else
             @endif
             @else
