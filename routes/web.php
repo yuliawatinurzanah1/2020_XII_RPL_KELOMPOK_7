@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
 Route::get('/account/{userId}/{userVerificationToken}/activate', 'Auth\AccountController@verifyToken');
